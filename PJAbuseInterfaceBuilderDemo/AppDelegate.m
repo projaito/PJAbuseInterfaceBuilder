@@ -9,11 +9,16 @@
 #import "AppDelegate.h"
 
 #import "ViewController.h"
+#import "PJAppearanceViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+
+    PJAppearanceViewController *controller = [[PJAppearanceViewController alloc] init];
+    [controller view];
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
@@ -21,7 +26,22 @@
     } else {
         self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
     }
-    self.window.rootViewController = self.viewController;
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    
+    UIViewController *emptyController = [[UIViewController alloc] init];
+    emptyController.title = @"empty";
+    
+    tabBarController.viewControllers = @[navController, emptyController];
+    
+    self.viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Test" style:UIBarButtonItemStyleBordered
+                                                                                           target:nil action:@selector(testDidClicked:)];
+    
+    self.viewController.title = @"first";
+
+    self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
     return YES;
 }

@@ -24,6 +24,8 @@
 		1A994D951625EFB6009C11C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A994D6D1625EFB6009C11C5 /* Foundation.framework */; };
 		1A994D9D1625EFB6009C11C5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A994D9B1625EFB6009C11C5 /* InfoPlist.strings */; };
 		1A994DA01625EFB6009C11C5 /* PJAbuseInterfaceBuilderDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A994D9F1625EFB6009C11C5 /* PJAbuseInterfaceBuilderDemoTests.m */; };
+		1A994DAF1625F0FB009C11C5 /* PJAppearanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A994DAB1625EFF8009C11C5 /* PJAppearanceViewController.m */; };
+		1A994DB01625F0FB009C11C5 /* PJAppearanceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A994DAC1625EFF8009C11C5 /* PJAppearanceViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,9 @@
 		1A994D9C1625EFB6009C11C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1A994D9E1625EFB6009C11C5 /* PJAbuseInterfaceBuilderDemoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PJAbuseInterfaceBuilderDemoTests.h; sourceTree = "<group>"; };
 		1A994D9F1625EFB6009C11C5 /* PJAbuseInterfaceBuilderDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PJAbuseInterfaceBuilderDemoTests.m; sourceTree = "<group>"; };
+		1A994DAA1625EFF8009C11C5 /* PJAppearanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJAppearanceViewController.h; sourceTree = "<group>"; };
+		1A994DAB1625EFF8009C11C5 /* PJAppearanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJAppearanceViewController.m; sourceTree = "<group>"; };
+		1A994DAC1625EFF8009C11C5 /* PJAppearanceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJAppearanceViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +94,7 @@
 		1A994D5C1625EFB6009C11C5 = {
 			isa = PBXGroup;
 			children = (
+				1A994DA91625EFEA009C11C5 /* PJAbuseInterfaceBuilder */,
 				1A994D711625EFB6009C11C5 /* PJAbuseInterfaceBuilderDemo */,
 				1A994D981625EFB6009C11C5 /* PJAbuseInterfaceBuilderDemoTests */,
 				1A994D6A1625EFB6009C11C5 /* Frameworks */,
@@ -161,6 +167,16 @@
 				1A994D9B1625EFB6009C11C5 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1A994DA91625EFEA009C11C5 /* PJAbuseInterfaceBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				1A994DAA1625EFF8009C11C5 /* PJAppearanceViewController.h */,
+				1A994DAB1625EFF8009C11C5 /* PJAppearanceViewController.m */,
+				1A994DAC1625EFF8009C11C5 /* PJAppearanceViewController.xib */,
+			);
+			path = PJAbuseInterfaceBuilder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +256,7 @@
 				1A994D821625EFB6009C11C5 /* Default-568h@2x.png in Resources */,
 				1A994D881625EFB6009C11C5 /* ViewController_iPhone.xib in Resources */,
 				1A994D8B1625EFB6009C11C5 /* ViewController_iPad.xib in Resources */,
+				1A994DB01625F0FB009C11C5 /* PJAppearanceViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +294,7 @@
 				1A994D781625EFB6009C11C5 /* main.m in Sources */,
 				1A994D7C1625EFB6009C11C5 /* AppDelegate.m in Sources */,
 				1A994D851625EFB6009C11C5 /* ViewController.m in Sources */,
+				1A994DAF1625F0FB009C11C5 /* PJAppearanceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
