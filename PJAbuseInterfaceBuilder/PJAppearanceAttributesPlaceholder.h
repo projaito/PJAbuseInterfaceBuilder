@@ -12,10 +12,13 @@
 @protocol PJAppearanceTextAttributePlaceholder <NSObject>
 
 - (NSDictionary *)textAttributes;
-- (UIControlState)state;
 
 @end
 
 @interface UIButton (PJAppearanceTextAttributePlaceholder) <PJAppearanceTextAttributePlaceholder>
+
+@end
+
+@interface UILabel (PJAppearanceTextAttributePlaceholder) <PJAppearanceTextAttributePlaceholder>
 
 @end
