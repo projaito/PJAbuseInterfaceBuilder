@@ -11,7 +11,9 @@
 #import "ViewController.h"
 #import "PJAppearanceViewController.h"
 
-@implementation AppDelegate
+@implementation AppDelegate {
+    UINavigationController *_navController;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -29,6 +31,8 @@
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
     
+    _navController = navController;
+
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     
     UIViewController *emptyController = [[UIViewController alloc] init];
@@ -36,8 +40,8 @@
     
     tabBarController.viewControllers = @[navController, emptyController];
     
-    self.viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Test" style:UIBarButtonItemStyleBordered
-                                                                                           target:nil action:@selector(testDidClicked:)];
+    self.viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Push" style:UIBarButtonItemStyleBordered
+                                                                                           target:nil action:@selector(pushBarButtonItemDidPress:)];
     
     self.viewController.title = @"first";
 
@@ -72,5 +76,15 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+- (void)pushBarButtonItemDidPress:(id)sender {
+    UIViewController *controller = [[UIViewController alloc] init];
+    controller.view.backgroundColor = [UIColor whiteColor];
+    controller.title = @"Empty";
+    controller.hidesBottomBarWhenPushed = YES;
+
+    [_navController pushViewController:controller animated:YES];
+}
+
 
 @end
