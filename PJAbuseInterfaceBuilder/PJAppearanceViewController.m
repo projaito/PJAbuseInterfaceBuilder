@@ -14,14 +14,19 @@
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *barButtonItem;
-@property (weak, nonatomic) IBOutlet UILabel *barButtonItemNormalTextAttribute;
-@property (weak, nonatomic) IBOutlet UILabel *barButtonItemSelectedTextAttribute;
+@property (weak, nonatomic) IBOutlet UILabel *barButtonItemTextAttributeNormal;
+@property (weak, nonatomic) IBOutlet UILabel *barButtonItemTextAttributeHighlighted;
+@property (weak, nonatomic) IBOutlet UIImageView *barButtonItemBackgroundImageNormal;
+@property (weak, nonatomic) IBOutlet UIImageView *barButtonItemBackgroundImageHighlighted;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *backBarButtonItem;
+@property (weak, nonatomic) IBOutlet UIImageView *backBarButtonItemBackgroundImageNormal;
+@property (weak, nonatomic) IBOutlet UIImageView *backBarButtonItemBackgroundImageHighlighted;
 
 @property (weak, nonatomic) IBOutlet UITabBar *tabBar;
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
-@property (weak, nonatomic) IBOutlet UILabel *segmentedControlNormalTextAttribute;
-@property (weak, nonatomic) IBOutlet UILabel *segmentedControlSelectedTextAttribute;
+@property (weak, nonatomic) IBOutlet UILabel *segmentedControlTextAttributeNormal;
+@property (weak, nonatomic) IBOutlet UILabel *segmentedControlTextAttributeHighlighted;
 
 @end
 
@@ -43,15 +48,20 @@
     // KISS
     
     // UISegmentedControl
-    [[[self.segmentedControl class] appearance] setTitleTextAttributes:[self.segmentedControlNormalTextAttribute textAttributes] forState:UIControlStateNormal];
-    [[[self.segmentedControl class] appearance] setTitleTextAttributes:[self.segmentedControlSelectedTextAttribute textAttributes] forState:UIControlStateSelected];
+    [[[self.segmentedControl class] appearance] setTitleTextAttributes:[self.segmentedControlTextAttributeNormal textAttributes] forState:UIControlStateNormal];
+    [[[self.segmentedControl class] appearance] setTitleTextAttributes:[self.segmentedControlTextAttributeHighlighted textAttributes] forState:UIControlStateHighlighted];
     [[[self.segmentedControl class] appearance] setTintColor:self.segmentedControl.tintColor];
 
     // UIBarButtonItem
-    [[[self.barButtonItem class] appearance] setTitleTextAttributes:[self.barButtonItemNormalTextAttribute textAttributes] forState:UIControlStateNormal];
-    [[[self.barButtonItem class] appearance] setTitleTextAttributes:[self.barButtonItemSelectedTextAttribute textAttributes] forState:UIControlStateSelected];
+    [[[self.barButtonItem class] appearance] setTitleTextAttributes:[self.barButtonItemTextAttributeNormal textAttributes] forState:UIControlStateNormal];
+    [[[self.barButtonItem class] appearance] setTitleTextAttributes:[self.barButtonItemTextAttributeHighlighted textAttributes] forState:UIControlStateHighlighted];
     [[[self.barButtonItem class] appearance] setTintColor:self.barButtonItem.tintColor];
-
+    [[[self.barButtonItem class] appearance] setBackgroundImage:[self.barButtonItemBackgroundImageNormal resizableImage] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [[[self.barButtonItem class] appearance] setBackgroundImage:[self.barButtonItemBackgroundImageHighlighted resizableImage] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
+    
+    [[[self.backBarButtonItem class] appearance] setBackButtonBackgroundImage:[self.backBarButtonItemBackgroundImageNormal resizableImage] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [[[self.backBarButtonItem class] appearance] setBackButtonBackgroundImage:[self.backBarButtonItemBackgroundImageHighlighted resizableImage] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
+    
     // UINavigationBar
     [[[self.navigationBar class] appearance] setTintColor:self.navigationBar.tintColor];
     
@@ -59,4 +69,10 @@
     [[[self.tabBar class] appearance] setTintColor:self.tabBar.tintColor];
 }
 
+- (void)viewDidUnload {
+    [self setBackBarButtonItemBackgroundImageNormal:nil];
+    [self setBackBarButtonItemBackgroundImageHighlighted:nil];
+    [self setBackBarButtonItem:nil];
+    [super viewDidUnload];
+}
 @end

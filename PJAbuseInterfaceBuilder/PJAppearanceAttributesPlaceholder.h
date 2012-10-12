@@ -18,3 +18,10 @@
 @interface UILabel (PJAppearanceTextAttributePlaceholder) <PJAppearanceTextAttributePlaceholder>
 
 @end
+
+@interface UIImageView (PJAppearanceAttributePlaceholder)
+
+@property (nonatomic, copy) NSString *resizableInset;
+@property (nonatomic, readonly) UIImage *resizableImage;
+
+@end

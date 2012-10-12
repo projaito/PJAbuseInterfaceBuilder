@@ -27,6 +27,9 @@
 		1A994DAF1625F0FB009C11C5 /* PJAppearanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A994DAB1625EFF8009C11C5 /* PJAppearanceViewController.m */; };
 		1A994DB01625F0FB009C11C5 /* PJAppearanceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A994DAC1625EFF8009C11C5 /* PJAppearanceViewController.xib */; };
 		52C99E351626678B005ACE19 /* PJAppearanceAttributesPlaceholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C99E341626678B005ACE19 /* PJAppearanceAttributesPlaceholder.m */; };
+		52F11442162857BF003BB0F5 /* barButtonNomal.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F11440162857BF003BB0F5 /* barButtonNomal.png */; };
+		52F11443162857BF003BB0F5 /* barButtonHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F11441162857BF003BB0F5 /* barButtonHighlighted.png */; };
+		52F11445162859A6003BB0F5 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F11444162859A5003BB0F5 /* back.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,9 @@
 		1A994DAC1625EFF8009C11C5 /* PJAppearanceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PJAppearanceViewController.xib; sourceTree = "<group>"; };
 		52C99E331626678B005ACE19 /* PJAppearanceAttributesPlaceholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJAppearanceAttributesPlaceholder.h; sourceTree = "<group>"; };
 		52C99E341626678B005ACE19 /* PJAppearanceAttributesPlaceholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJAppearanceAttributesPlaceholder.m; sourceTree = "<group>"; };
+		52F11440162857BF003BB0F5 /* barButtonNomal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barButtonNomal.png; sourceTree = "<group>"; };
+		52F11441162857BF003BB0F5 /* barButtonHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barButtonHighlighted.png; sourceTree = "<group>"; };
+		52F11444162859A5003BB0F5 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +155,9 @@
 				1A994D7D1625EFB6009C11C5 /* Default.png */,
 				1A994D7F1625EFB6009C11C5 /* Default@2x.png */,
 				1A994D811625EFB6009C11C5 /* Default-568h@2x.png */,
+				52F11444162859A5003BB0F5 /* back.png */,
+				52F11440162857BF003BB0F5 /* barButtonNomal.png */,
+				52F11441162857BF003BB0F5 /* barButtonHighlighted.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -262,6 +271,9 @@
 				1A994D881625EFB6009C11C5 /* ViewController_iPhone.xib in Resources */,
 				1A994D8B1625EFB6009C11C5 /* ViewController_iPad.xib in Resources */,
 				1A994DB01625F0FB009C11C5 /* PJAppearanceViewController.xib in Resources */,
+				52F11442162857BF003BB0F5 /* barButtonNomal.png in Resources */,
+				52F11443162857BF003BB0F5 /* barButtonHighlighted.png in Resources */,
+				52F11445162859A6003BB0F5 /* back.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
