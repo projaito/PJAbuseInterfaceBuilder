@@ -15,10 +15,6 @@
 
 @end
 
-@interface UIButton (PJAppearanceTextAttributePlaceholder) <PJAppearanceTextAttributePlaceholder>
-
-@end
-
 @interface UILabel (PJAppearanceTextAttributePlaceholder) <PJAppearanceTextAttributePlaceholder>
 
 @end

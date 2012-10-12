@@ -14,14 +14,14 @@
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *barButtonItem;
-@property (weak, nonatomic) IBOutlet id <PJAppearanceTextAttributePlaceholder> barButtonItemNormalTextAttribute;
-@property (weak, nonatomic) IBOutlet id <PJAppearanceTextAttributePlaceholder> barButtonItemSelectedTextAttribute;
+@property (weak, nonatomic) IBOutlet UILabel *barButtonItemNormalTextAttribute;
+@property (weak, nonatomic) IBOutlet UILabel *barButtonItemSelectedTextAttribute;
 
 @property (weak, nonatomic) IBOutlet UITabBar *tabBar;
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
-@property (weak, nonatomic) IBOutlet id <PJAppearanceTextAttributePlaceholder> segmentedControlNormalTextAttribute;
-@property (weak, nonatomic) IBOutlet id <PJAppearanceTextAttributePlaceholder> segmentedControlSelectedTextAttribute;
+@property (weak, nonatomic) IBOutlet UILabel *segmentedControlNormalTextAttribute;
+@property (weak, nonatomic) IBOutlet UILabel *segmentedControlSelectedTextAttribute;
 
 @end
 
@@ -40,43 +40,23 @@
 {
     [super viewDidLoad];
 
-    // Configure all with placeholder first then actual container because
-    // the use case is that if we are using placeholder objects, the original
-    // appearance container can't config those properties.
-    [self configureAppearance:self.barButtonItem usingPlaceholder:self.barButtonItemNormalTextAttribute controlState:UIControlStateNormal];
-    [self configureAppearance:self.barButtonItem usingPlaceholder:self.barButtonItemSelectedTextAttribute controlState:UIControlStateSelected];
-    [self configureAppearance:self.segmentedControl usingPlaceholder:self.segmentedControlNormalTextAttribute controlState:UIControlStateNormal];
-    [self configureAppearance:self.segmentedControl usingPlaceholder:self.segmentedControlSelectedTextAttribute controlState:UIControlStateSelected];
-
-    // Then finally configure with the actual container to override all
-    // unexpected attributes set with placeholders
-    [self configureAppearance:self.navigationBar];
-    [self configureAppearance:self.barButtonItem];
-    [self configureAppearance:self.tabBar];
-    [self configureAppearance:self.segmentedControl];
-}
-
-- (void)configureAppearance:(id)container {
-    [self configureAppearance:container usingPlaceholder:nil controlState:0];
-}
-
-- (void)configureAppearance:(id)container usingPlaceholder:(id)placeholder controlState:(UIControlState)state {
+    // KISS
     
-    id appearance = [[container class] appearance];
-    if ( ! placeholder) {
-        placeholder = container;
-    }
+    // UISegmentedControl
+    [[[self.segmentedControl class] appearance] setTitleTextAttributes:[self.segmentedControlNormalTextAttribute textAttributes] forState:UIControlStateNormal];
+    [[[self.segmentedControl class] appearance] setTitleTextAttributes:[self.segmentedControlSelectedTextAttribute textAttributes] forState:UIControlStateSelected];
+    [[[self.segmentedControl class] appearance] setTintColor:self.segmentedControl.tintColor];
+
+    // UIBarButtonItem
+    [[[self.barButtonItem class] appearance] setTitleTextAttributes:[self.barButtonItemNormalTextAttribute textAttributes] forState:UIControlStateNormal];
+    [[[self.barButtonItem class] appearance] setTitleTextAttributes:[self.barButtonItemSelectedTextAttribute textAttributes] forState:UIControlStateSelected];
+    [[[self.barButtonItem class] appearance] setTintColor:self.barButtonItem.tintColor];
 
     // UINavigationBar
-    if ([container respondsToSelector:@selector(setTintColor:)] && [placeholder respondsToSelector:@selector(tintColor)]) {
-        [appearance setTintColor:[placeholder tintColor]];
-    }
-
-    if ([container respondsToSelector:@selector(setTitleTextAttributes:forState:)] && [placeholder conformsToProtocol:@protocol(PJAppearanceTextAttributePlaceholder)]) {
-        NSDictionary *textAttributes = [placeholder textAttributes];
-        [appearance setTitleTextAttributes:textAttributes forState:state];
-    }
+    [[[self.navigationBar class] appearance] setTintColor:self.navigationBar.tintColor];
+    
+    // UITabBar
+    [[[self.tabBar class] appearance] setTintColor:self.tabBar.tintColor];
 }
-
 
 @end
