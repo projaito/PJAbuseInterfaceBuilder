@@ -10,9 +10,14 @@
 
 @interface XIBButton : UIButton
 
-@property (nonatomic, strong) IBOutlet UIImageView *selectedImageView;
-@property (nonatomic, strong) IBOutlet UIImageView *normalImageView;
-@property (nonatomic, strong) IBOutlet UIImageView *highlightedImageView;
-@property (nonatomic, strong) IBOutlet UIImageView *disabledImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *backgroundImageHighlighted;
+@property (nonatomic, weak) IBOutlet UIImageView *backgroundImageSelected;
+@property (nonatomic, weak) IBOutlet UIImageView *backgroundImageNormal;
+@property (nonatomic, weak) IBOutlet UIImageView *backgroundImageDisabled;
+
+@property (nonatomic, strong) IBOutlet UIView *rectForContent;
+@property (nonatomic, strong) IBOutlet UIView *rectForBackground;
+@property (nonatomic, strong) IBOutlet UIView *rectForTitle;
+@property (nonatomic, strong) IBOutlet UIView *rectForImage;
 
 @end

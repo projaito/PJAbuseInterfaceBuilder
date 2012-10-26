@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1A47E94D163A4460003E32CF /* XIBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A47E94C163A4460003E32CF /* XIBButton.m */; };
 		1A47E950163A4570003E32CF /* XIBImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A47E94F163A4570003E32CF /* XIBImageView.m */; };
+		1A642A28163A839800C83C43 /* bird.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A642A27163A839800C83C43 /* bird.png */; };
 		1A994D6C1625EFB6009C11C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A994D6B1625EFB6009C11C5 /* UIKit.framework */; };
 		1A994D6E1625EFB6009C11C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A994D6D1625EFB6009C11C5 /* Foundation.framework */; };
 		1A994D701625EFB6009C11C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A994D6F1625EFB6009C11C5 /* CoreGraphics.framework */; };
@@ -49,6 +50,7 @@
 		1A47E94C163A4460003E32CF /* XIBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XIBButton.m; sourceTree = "<group>"; };
 		1A47E94E163A4570003E32CF /* XIBImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XIBImageView.h; sourceTree = "<group>"; };
 		1A47E94F163A4570003E32CF /* XIBImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XIBImageView.m; sourceTree = "<group>"; };
+		1A642A27163A839800C83C43 /* bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird.png; sourceTree = "<group>"; };
 		1A994D671625EFB6009C11C5 /* PJAbuseInterfaceBuilderDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PJAbuseInterfaceBuilderDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A994D6B1625EFB6009C11C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1A994D6D1625EFB6009C11C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -166,6 +168,7 @@
 		1A994D721625EFB6009C11C5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1A642A27163A839800C83C43 /* bird.png */,
 				1A994D731625EFB6009C11C5 /* PJAbuseInterfaceBuilderDemo-Info.plist */,
 				1A994D741625EFB6009C11C5 /* InfoPlist.strings */,
 				1A994D771625EFB6009C11C5 /* main.m */,
@@ -292,6 +295,7 @@
 				52F11442162857BF003BB0F5 /* barButtonNomal.png in Resources */,
 				52F11443162857BF003BB0F5 /* barButtonHighlighted.png in Resources */,
 				52F11445162859A6003BB0F5 /* back.png in Resources */,
+				1A642A28163A839800C83C43 /* bird.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
