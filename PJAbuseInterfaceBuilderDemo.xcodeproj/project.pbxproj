@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A47E94D163A4460003E32CF /* XIBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A47E94C163A4460003E32CF /* XIBButton.m */; };
+		1A47E950163A4570003E32CF /* XIBImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A47E94F163A4570003E32CF /* XIBImageView.m */; };
 		1A994D6C1625EFB6009C11C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A994D6B1625EFB6009C11C5 /* UIKit.framework */; };
 		1A994D6E1625EFB6009C11C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A994D6D1625EFB6009C11C5 /* Foundation.framework */; };
 		1A994D701625EFB6009C11C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A994D6F1625EFB6009C11C5 /* CoreGraphics.framework */; };
@@ -43,6 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A47E94B163A4460003E32CF /* XIBButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XIBButton.h; sourceTree = "<group>"; };
+		1A47E94C163A4460003E32CF /* XIBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XIBButton.m; sourceTree = "<group>"; };
+		1A47E94E163A4570003E32CF /* XIBImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XIBImageView.h; sourceTree = "<group>"; };
+		1A47E94F163A4570003E32CF /* XIBImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XIBImageView.m; sourceTree = "<group>"; };
 		1A994D671625EFB6009C11C5 /* PJAbuseInterfaceBuilderDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PJAbuseInterfaceBuilderDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A994D6B1625EFB6009C11C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1A994D6D1625EFB6009C11C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -100,9 +106,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A47E949163A444E003E32CF /* XIBViews */ = {
+			isa = PBXGroup;
+			children = (
+				1A47E94B163A4460003E32CF /* XIBButton.h */,
+				1A47E94C163A4460003E32CF /* XIBButton.m */,
+				1A47E94E163A4570003E32CF /* XIBImageView.h */,
+				1A47E94F163A4570003E32CF /* XIBImageView.m */,
+			);
+			path = XIBViews;
+			sourceTree = "<group>";
+		};
 		1A994D5C1625EFB6009C11C5 = {
 			isa = PBXGroup;
 			children = (
+				1A47E949163A444E003E32CF /* XIBViews */,
 				1A994DA91625EFEA009C11C5 /* PJAbuseInterfaceBuilder */,
 				1A994D711625EFB6009C11C5 /* PJAbuseInterfaceBuilderDemo */,
 				1A994D981625EFB6009C11C5 /* PJAbuseInterfaceBuilderDemoTests */,
@@ -313,6 +331,8 @@
 				1A994D851625EFB6009C11C5 /* ViewController.m in Sources */,
 				1A994DAF1625F0FB009C11C5 /* PJAppearanceViewController.m in Sources */,
 				52C99E351626678B005ACE19 /* PJAppearanceAttributesPlaceholder.m in Sources */,
+				1A47E94D163A4460003E32CF /* XIBButton.m in Sources */,
+				1A47E950163A4570003E32CF /* XIBImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
