@@ -28,3 +28,32 @@
 }
 
 @end
+
+
+@implementation XIBDrawRectView
+
+- (void)awakeFromNib {
+    [self.drawAsPatternImageViews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [obj setHidden:YES];
+    }];
+    [self.drawInRectImageViews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [obj setHidden:YES];
+    }];
+    [self.drawAtPointImageViews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [obj setHidden:YES];
+    }];
+}
+
+- (void)drawRect:(CGRect)rect {
+    [self.drawAsPatternImageViews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [[obj image] drawAsPatternInRect:[obj frame]];
+    }];
+    [self.drawInRectImageViews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [[obj image] drawInRect:[obj frame]];
+    }];
+    [self.drawAtPointImageViews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [[obj image] drawAtPoint:[obj frame].origin];
+    }];
+}
+
+@end

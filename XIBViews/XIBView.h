@@ -14,3 +14,11 @@
 @property (nonatomic) BOOL useBoundsForShadowPath;
 
 @end
+
+@interface XIBDrawRectView : UIView
+
+@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *drawAsPatternImageViews;
+@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *drawInRectImageViews;
+@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *drawAtPointImageViews;
+
+@end
