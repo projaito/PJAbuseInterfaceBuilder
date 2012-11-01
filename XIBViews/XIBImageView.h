@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XIBView.h"
 
 @interface XIBImageView : UIImageView
 
@@ -17,3 +18,11 @@
 
 @end
 
+
+@interface XIBSpriteImageView : UIImageView
+
+@property (nonatomic) CGSize spriteSize;
+
+- (CGRect)rectAtPosition:(CGPoint)position;
+
+@end

@@ -38,3 +38,19 @@
 }
 
 @end
+
+
+
+@implementation XIBSpriteImageView
+
+- (CGRect)rectAtPosition:(CGPoint)position {
+    CGSize size = self.frame.size;
+    return (CGRect){
+        position.x * size.width,
+        position.y * size.height,
+        size
+    };
+}
+
+@end
+

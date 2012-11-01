@@ -7,6 +7,7 @@
 //
 
 #import "XIBView.h"
+#import "XIBImageView.h"
 #import <QuartzCore/QuartzCore.h>
 
 @implementation XIBView
@@ -42,6 +43,9 @@
     [self.drawAtPointImageViews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         [obj setHidden:YES];
     }];
+    [self.drawableViews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [obj setHidden:YES];
+    }];
 }
 
 - (void)drawRect:(CGRect)rect {
@@ -54,6 +58,12 @@
     [self.drawAtPointImageViews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         [[obj image] drawAtPoint:[obj frame].origin];
     }];
+    [self.drawableViews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if ([obj conformsToProtocol:@protocol(XIBDrawable)]) {
+            [obj drawContextInRect:[obj frame]];
+        }
+    }];
 }
 
 @end
+

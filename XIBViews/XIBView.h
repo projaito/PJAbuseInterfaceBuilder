@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIView+XIBDrawable.h"
+
 
 @interface XIBView : UIView
 
@@ -20,5 +22,7 @@
 @property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *drawAsPatternImageViews;
 @property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *drawInRectImageViews;
 @property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *drawAtPointImageViews;
+
+@property (strong, nonatomic) IBOutletCollection(UIView) NSArray *drawableViews;    // UIView <XIBDrawable>
 
 @end
