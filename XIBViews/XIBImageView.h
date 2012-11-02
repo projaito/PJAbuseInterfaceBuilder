@@ -25,4 +25,6 @@
 
 - (CGRect)rectAtPosition:(CGPoint)position;
 
+- (CGPoint)spriteForTouchLocation:(CGPoint)touchLocation;
+
 @end

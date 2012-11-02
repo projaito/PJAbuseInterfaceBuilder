@@ -52,5 +52,29 @@
     };
 }
 
+- (CGSize)totalPosition {
+    CGSize size = self.image.size;
+    
+    return (CGSize){
+        ceilf(size.width / _spriteSize.width),
+        ceilf(size.height / _spriteSize.height)
+              };
+}
+
+- (CGPoint)spriteForTouchLocation:(CGPoint)touchLocation {
+
+    CGSize totalPosition = [self totalPosition];
+    CGFloat width = self.frame.size.width / totalPosition.width;
+    
+    CGFloat height = self.frame.size.height / totalPosition.height;
+
+    CGPoint point = CGPointMake(
+                                floorf(touchLocation.x / width),
+                                floorf(touchLocation.y / height)
+                                );
+    
+    return point;
+}
+
 @end
 

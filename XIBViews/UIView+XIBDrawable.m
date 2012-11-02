@@ -75,14 +75,20 @@
 }
 
 - (void)awakeFromNib {
+    [self updateSource];
+}
+
+- (void)updateSource {
     self.image = self.sourceImageView.image;
     _spriteSize = self.sourceImageView.spriteSize;
     
-    CGSize size = self.sourceImageView.frame.size;
-
-    _dimension = CGSizeMake(size.width / _spriteSize.width, size.height/_spriteSize.height);
+    CGSize size = self.image.size;
+    
+    _dimension = CGSizeMake(
+                            ceilf(size.width / _spriteSize.width),
+                            ceilf(size.height/_spriteSize.height)
+                            );
 }
-
 
 - (void)drawContextInRect:(CGRect)rect {
     

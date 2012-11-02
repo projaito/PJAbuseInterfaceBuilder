@@ -51,5 +51,7 @@
 @property (nonatomic, weak) IBOutlet XIBSpriteImageView *sourceImageView;
 @property (nonatomic) CGPoint spritePosition;
 
+- (void)updateSource;
+
 @end
 
