@@ -52,6 +52,15 @@
     };
 }
 
+- (CGRect)imageRectAtPosition:(CGPoint)position {
+    CGSize size = _spriteSize;
+    return (CGRect){
+        position.x * size.width,
+        position.y * size.height,
+        size
+    };
+}
+
 - (CGSize)totalPosition {
     CGSize size = self.image.size;
     
@@ -74,6 +83,21 @@
                                 );
     
     return point;
+}
+
+- (UIImage *)imageFromPosition:(CGPoint)position {
+    UIGraphicsBeginImageContextWithOptions(_spriteSize, YES, 0);
+    CGRect rect = [self imageRectAtPosition:position];
+    UIRectClip((CGRect){CGPointZero, rect.size});
+    
+    [self.image drawAtPoint:(CGPoint){
+        -rect.origin.x,
+        -rect.origin.y}];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+
+    return image;
 }
 
 @end

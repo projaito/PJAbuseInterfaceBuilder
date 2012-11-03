@@ -27,4 +27,6 @@
 
 - (CGPoint)spriteForTouchLocation:(CGPoint)touchLocation;
 
+- (UIImage *)imageFromPosition:(CGPoint)position;
+
 @end
