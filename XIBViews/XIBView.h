@@ -26,3 +26,13 @@
 @property (strong, nonatomic) IBOutletCollection(UIView) NSArray *drawableViews;    // UIView <XIBDrawable>
 
 @end
+
+
+@interface XIBFlowLayoutView : UIView
+
+@property (weak, nonatomic) IBOutlet UIView *targetView;
+@property (copy, nonatomic) NSString *keyPath;
+
+//- (IBAction)targetViewValueChanged:(id)sender;
+
+@end
