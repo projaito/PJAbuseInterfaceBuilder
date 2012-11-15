@@ -70,6 +70,7 @@
 
 @implementation XIBFlowLayoutView {
     CGRect _frame;
+    CGRect _targetViewFrame;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
@@ -82,9 +83,8 @@
 
 - (void)awakeFromNib {
     self.frame = _frame;
-//    NSLog(@"%@ %@", self, NSStringFromCGRect(_frame));
-
-    [self.targetView addObserver:self forKeyPath:self.keyPath options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial               context:nil];
+    _targetViewFrame = self.targetView.frame;
+    [self.targetView addObserver:self forKeyPath:self.keyPath options:NSKeyValueObservingOptionNew context:nil];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
@@ -97,16 +97,18 @@
 
 
 - (void)updateSize {
-    CGSize size = [self.targetView sizeThatFits:self.targetView.frame.size];
+    CGSize size = [self.targetView sizeThatFits:_targetViewFrame.size contentMode:self.targetView.contentMode];
     
     CGSize diffSize = CGSizeMake(self.targetView.frame.size.width - size.width, self.targetView.frame.size.height - size.height);
     
-//    NSLog(@"%@", NSStringFromCGSize(diffSize));
-    self.bounds = (CGRect){
+    CGRect bounds = (CGRect){
         CGPointZero,
         self.frame.size.width - diffSize.width,
         self.frame.size.height - diffSize.height,
     };
+
+    self.bounds = CGRectIntegral(bounds);
+
 }
 
 #pragma mark Action
@@ -114,5 +116,87 @@
 //- (IBAction)targetViewValueChanged:(id)sender {
 //    [self updateSize];
 //}
+
+@end
+
+@implementation UIView (FlowSize)
+
+- (CGSize)sizeThatFits:(CGSize)size contentMode:(UIViewContentMode)contentMode {
+    return [self sizeThatFits:size];
+}
+
+@end
+
+
+@implementation UIImageView (FlowSize)
+
+- (CGSize)sizeThatFits:(CGSize)size contentMode:(UIViewContentMode)contentMode {
+    
+    if (contentMode == UIViewContentModeScaleAspectFit) {
+        return [self sizeThatAspectFits:size];
+    } else if (contentMode == UIViewContentModeScaleAspectFill) {
+        return [self sizeThatAspectFills:size];
+    } else {
+        return [super sizeThatFits:size contentMode:contentMode];
+    }
+}
+
+- (CGSize)sizeThatAspectFits:(CGSize)size {
+    UIImage *image = self.image;
+    
+    if ( ! image) {
+        return CGSizeZero;
+    }
+    
+    float imageRatio = image.size.width / image.size.height;
+    
+    float viewRatio = size.width / size.height;
+    
+    float width, height;
+    if(imageRatio < viewRatio)
+    {
+        float scale = size.height / image.size.height;
+        
+        width = scale * image.size.width;
+        height = size.height;
+        
+    } else {
+        float scale = size.width / image.size.width;
+        
+        height = scale * image.size.height;
+        width = size.width;
+    }
+    
+    return CGSizeMake(width, height);
+}
+
+- (CGSize)sizeThatAspectFills:(CGSize)size {
+    UIImage *image = self.image;
+    
+    if ( ! image) {
+        return CGSizeZero;
+    }
+
+    float imageRatio = image.size.width / image.size.height;
+    
+    float viewRatio = size.width / size.height;
+    
+    float width, height;
+    if(imageRatio > viewRatio)
+    {
+        float scale = size.height / image.size.height;
+        
+        width = scale * image.size.width;
+        height = size.height;
+
+    } else {
+        float scale = size.width / image.size.width;
+        
+        height = scale * image.size.height;
+        width = size.width;
+    }
+    
+    return CGSizeMake(width, height);
+}
 
 @end

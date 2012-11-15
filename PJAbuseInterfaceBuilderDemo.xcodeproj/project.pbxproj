@@ -52,6 +52,7 @@
 		1AC9D5371654147100334192 /* XIBImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A47E94F163A4570003E32CF /* XIBImageView.m */; };
 		1AC9D5381654147100334192 /* UIView+XIBDrawable.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A61EFAD1642C69300FC8A3C /* UIView+XIBDrawable.m */; };
 		1AC9D53A1655398500334192 /* XIBFlowLayoutDemo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AC9D5391655398500334192 /* XIBFlowLayoutDemo.storyboard */; };
+		1AC9D53E16553C1500334192 /* XIBFlowImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC9D53D16553C1500334192 /* XIBFlowImageViewController.m */; };
 		52C99E351626678B005ACE19 /* PJAppearanceAttributesPlaceholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C99E341626678B005ACE19 /* PJAppearanceAttributesPlaceholder.m */; };
 		52F11442162857BF003BB0F5 /* barButtonNomal.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F11440162857BF003BB0F5 /* barButtonNomal.png */; };
 		52F11443162857BF003BB0F5 /* barButtonHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F11441162857BF003BB0F5 /* barButtonHighlighted.png */; };
@@ -130,6 +131,8 @@
 		1AC9D52B165411C700334192 /* XIBFlowLayoutViewDemoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XIBFlowLayoutViewDemoTests.h; sourceTree = "<group>"; };
 		1AC9D52C165411C700334192 /* XIBFlowLayoutViewDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XIBFlowLayoutViewDemoTests.m; sourceTree = "<group>"; };
 		1AC9D5391655398500334192 /* XIBFlowLayoutDemo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = XIBFlowLayoutDemo.storyboard; sourceTree = "<group>"; };
+		1AC9D53C16553C1500334192 /* XIBFlowImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XIBFlowImageViewController.h; sourceTree = "<group>"; };
+		1AC9D53D16553C1500334192 /* XIBFlowImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XIBFlowImageViewController.m; sourceTree = "<group>"; };
 		52C99E331626678B005ACE19 /* PJAppearanceAttributesPlaceholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJAppearanceAttributesPlaceholder.h; sourceTree = "<group>"; };
 		52C99E341626678B005ACE19 /* PJAppearanceAttributesPlaceholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJAppearanceAttributesPlaceholder.m; sourceTree = "<group>"; };
 		52F11440162857BF003BB0F5 /* barButtonNomal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barButtonNomal.png; sourceTree = "<group>"; };
@@ -346,6 +349,8 @@
 			children = (
 				1AC9D511165411C700334192 /* ViewController.h */,
 				1AC9D512165411C700334192 /* ViewController.m */,
+				1AC9D53C16553C1500334192 /* XIBFlowImageViewController.h */,
+				1AC9D53D16553C1500334192 /* XIBFlowImageViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -569,6 +574,7 @@
 				1AC9D5361654147100334192 /* XIBButton.m in Sources */,
 				1AC9D5371654147100334192 /* XIBImageView.m in Sources */,
 				1AC9D5381654147100334192 /* UIView+XIBDrawable.m in Sources */,
+				1AC9D53E16553C1500334192 /* XIBFlowImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

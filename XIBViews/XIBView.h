@@ -36,3 +36,10 @@
 //- (IBAction)targetViewValueChanged:(id)sender;
 
 @end
+
+
+@interface UIView (FlowSize)
+
+- (CGSize)sizeThatFits:(CGSize)size contentMode:(UIViewContentMode)contentMode;
+
+@end
