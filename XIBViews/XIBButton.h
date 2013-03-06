@@ -14,6 +14,9 @@
 @property (nonatomic, weak) IBOutlet UIImageView *backgroundImageSelected;
 @property (nonatomic, weak) IBOutlet UIImageView *backgroundImageNormal;
 @property (nonatomic, weak) IBOutlet UIImageView *backgroundImageDisabled;
+@property (nonatomic, weak) IBOutlet UIImageView *backgroundImageSelectedHighlighted;
+
+@property (nonatomic, weak) IBOutlet UIImageView *imageSelectedHighlighted;
 
 @property (nonatomic, strong) IBOutlet UIView *rectForContent;
 @property (nonatomic, strong) IBOutlet UIView *rectForBackground;

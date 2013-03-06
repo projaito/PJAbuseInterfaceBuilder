@@ -28,6 +28,15 @@
         [self setBackgroundImage:self.backgroundImageDisabled.image forState:UIControlStateDisabled];
     }
 
+    if (self.backgroundImageSelectedHighlighted.image) {
+        [self setBackgroundImage:self.backgroundImageSelectedHighlighted.image forState:UIControlStateHighlighted|UIControlStateSelected];
+    }
+    
+    if (self.imageSelectedHighlighted.image) {
+        [self setImage:self.imageSelectedHighlighted.image forState:UIControlStateHighlighted|UIControlStateSelected];
+    }
+
+
     self.rectForTitle.hidden = YES;
     self.rectForBackground.hidden = YES;
     self.rectForContent.hidden = YES;
