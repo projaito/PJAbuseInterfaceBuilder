@@ -200,3 +200,14 @@
 }
 
 @end
+
+
+@implementation XIBTableView
+
+- (void)awakeFromNib {
+    if (self.backgroundColorImageView) {
+        self.backgroundColor = [UIColor colorWithPatternImage:self.backgroundColorImageView.image];
+    }
+}
+
+@end

@@ -43,3 +43,11 @@
 - (CGSize)sizeThatFits:(CGSize)size contentMode:(UIViewContentMode)contentMode;
 
 @end
+
+
+@interface XIBTableView : UITableView
+
+@property (nonatomic, weak) IBOutlet UIImageView *backgroundColorImageView;
+@property (nonatomic, strong) IBOutlet UIView *backgroundView;
+
+@end
