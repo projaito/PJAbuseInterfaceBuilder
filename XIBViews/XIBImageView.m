@@ -14,11 +14,11 @@
 
     UIEdgeInsets capInsets = _capInsets;
 
-    if (UIEdgeInsetsEqualToEdgeInsets(UIEdgeInsetsZero, capInsets)) {
+    if (UIEdgeInsetsEqualToEdgeInsets(UIEdgeInsetsZero, capInsets) && self.capInsetsString) {
         capInsets = UIEdgeInsetsFromString(self.capInsetsString);
     }
 
-    if (UIEdgeInsetsEqualToEdgeInsets(UIEdgeInsetsZero, capInsets)) {
+    if (UIEdgeInsetsEqualToEdgeInsets(UIEdgeInsetsZero, capInsets) && self.capInsetsView) {
 
         CGRect frame = self.capInsetsView.frame;
         capInsets = UIEdgeInsetsMake(
