@@ -41,6 +41,13 @@
     self.rectForBackground.hidden = YES;
     self.rectForContent.hidden = YES;
     self.rectForImage.hidden = YES;
+
+    if ( self.selectedHighlightTextColor ) {
+        [self setTitleColor:self.selectedHighlightTextColor forState:UIControlStateHighlighted | UIControlStateSelected];
+    }
+    if ( self.selectedHighlightTextShadowColor ) {
+        [self setTitleShadowColor:self.selectedHighlightTextShadowColor forState:UIControlStateSelected | UIControlStateHighlighted];
+    }
 }
 
 - (CGRect)contentRectForBounds:(CGRect)bounds {

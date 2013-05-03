@@ -23,4 +23,7 @@
 @property (nonatomic, strong) IBOutlet UIView *rectForTitle;
 @property (nonatomic, strong) IBOutlet UIView *rectForImage;
 
+@property (nonatomic, assign) UIColor *selectedHighlightTextColor;
+@property (nonatomic, assign) UIColor *selectedHighlightTextShadowColor;
+
 @end
