@@ -51,3 +51,12 @@
 @property (nonatomic, strong) IBOutlet UIView *backgroundView;
 
 @end
+
+
+// Auto remove constraints when the marked contentView has specific axis equals to zero
+@interface XIBCollapsingView : UIView
+
+@property (nonatomic, strong) IBOutletCollection(NSLayoutConstraint) NSArray *collaspingHeightConstraints;
+@property (nonatomic, strong) IBOutletCollection(NSLayoutConstraint) NSArray *collaspingWidthConstraints;
+//@property
+@end

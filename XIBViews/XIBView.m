@@ -211,3 +211,47 @@
 }
 
 @end
+
+
+@implementation XIBCollapsingView
+
+- (CGSize)intrinsicContentSize {
+
+    __block CGSize contentViewSize = CGSizeZero;
+
+    [[self subviews] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        CGSize subviewSize = [obj intrinsicContentSize];
+        contentViewSize = (CGSize){
+            contentViewSize.width   + subviewSize.width,
+            contentViewSize.height  + subviewSize.height
+        };
+    }];
+
+    [self.collaspingHeightConstraints enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {        
+        NSLayoutConstraint *constraint = obj;
+
+        NSUInteger index = [self.constraints indexOfObject:obj];
+        if (index != NSNotFound && contentViewSize.height == 0) {
+            [self removeConstraint:constraint];
+        } else if (index == NSNotFound && contentViewSize.height > 0) {
+            [self addConstraint:constraint];
+        }
+    }];
+    
+    [self.collaspingWidthConstraints enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSLayoutConstraint *constraint = obj;
+        
+        NSUInteger index = [self.constraints indexOfObject:obj];
+        if (index != NSNotFound && contentViewSize.width == 0) {
+            [self removeConstraint:constraint];
+        } else if (index == NSNotFound && contentViewSize.width > 0) {
+            [self addConstraint:constraint];
+        }
+    }];
+
+    CGSize defaultSize = [super intrinsicContentSize];
+
+    return defaultSize;
+}
+
+@end
