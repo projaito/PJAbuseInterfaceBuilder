@@ -255,3 +255,56 @@
 }
 
 @end
+#import <objc/runtime.h>
+
+@implementation UIView (XIBRestorableView)
+
+- (void)prepareForReuse {
+    [self.subviews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [obj prepareForReuse];
+    }];
+}
+
+@end
+
+@implementation XIBReusableView {
+    BOOL _isRestoring;
+}
+
+- (void)awakeFromNib {
+    self.restorableViews = [NSMutableArray array];
+}
+
+- (void)addSubview:(UIView *)view {
+    [super addSubview:view];
+    
+    if (_isRestoring) {
+        [self.restorableViews addObject:view];
+    }
+}
+
+- (void)prepareForReuse {
+    _isRestoring = YES;
+
+    [self.restorableViews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [self addSubview:obj];
+    }];
+    
+    _isRestoring = NO;
+
+    [super prepareForReuse];
+}
+
+@end
+
+@implementation XIBReusableCollectionViewCell
+
+- (void)prepareForReuse {
+    [self.subviews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [obj prepareForReuse];
+    }];
+    
+    [super prepareForReuse];
+}
+
+@end

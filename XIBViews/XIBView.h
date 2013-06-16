@@ -60,3 +60,28 @@
 @property (nonatomic, strong) IBOutletCollection(NSLayoutConstraint) NSArray *collaspingWidthConstraints;
 //@property
 @end
+
+
+@protocol XIBReusableView <NSObject>
+
+- (void)prepareForReuse;
+
+@end
+
+@interface UIView (XIBRestorableView) <XIBReusableView>
+
+@end
+
+@interface XIBReusableView : UIView
+
+@property (nonatomic, strong) NSMutableArray *restorableViews;
+
+@end
+
+@interface XIBReusableCollectionViewCell : UICollectionViewCell
+
+@end
+
+
+
+
